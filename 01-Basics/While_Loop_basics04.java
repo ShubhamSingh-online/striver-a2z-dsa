@@ -42,7 +42,7 @@ class Solution {
     }
 }
 
-public class While_Loop_basics {
+public class While_Loop_basics04 {
 
     public static void main(String[] args) {
 
