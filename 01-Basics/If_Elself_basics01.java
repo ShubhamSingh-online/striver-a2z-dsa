@@ -41,7 +41,7 @@ class Solution {
     }
 }
 
-public class If_Elself_basics {
+public class If_Elself_basics01 {
 
     public static void main(String[] args) {
 
