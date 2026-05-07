@@ -37,7 +37,7 @@ class Solution {
     }
 }
 
-public class Pass_by_Ref_basics {
+public class Pass_by_Ref_basics05 {
 
     public static void main(String[] args) {
 
