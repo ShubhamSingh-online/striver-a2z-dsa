@@ -22,6 +22,7 @@ Documenting my DSA journey by solving problems consistently and writing clean, u
 # Topics Covered
 
 * Basics
+* Patterns
 * Sorting
 * Arrays
 * Binary Search
