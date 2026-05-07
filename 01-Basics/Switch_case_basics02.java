@@ -57,7 +57,7 @@ class Solution {
     }
 }
 
-public class Switch_case_basics {
+public class Switch_case_basics02 {
 
     public static void main(String[] args) {
 
