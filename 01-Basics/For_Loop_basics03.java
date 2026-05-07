@@ -31,7 +31,7 @@ class Solution {
     }
 }
 
-public class For_Loop_basics {
+public class For_Loop_basics03 {
 
     public static void main(String[] args) {
 
