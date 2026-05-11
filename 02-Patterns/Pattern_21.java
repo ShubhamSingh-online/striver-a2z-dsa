@@ -1,30 +1,26 @@
-// Problem: Pattern 20
+// Problem: Pattern 21
 // Language: Java
 
 /*
 Problem Statement:
-Given an integer n, print the following pattern.
+Given an integer n, print the following hollow square pattern.
 
 Example for n = 5:
 
-*        *
-**      **
-***    ***
-****  ****
-**********
-****  ****
-***    ***
-**      **
-*        *
+*****
+*   *
+*   *
+*   *
+*****
 
 Approach:
-- Divide the pattern into:
-    1. Upper half
-    2. Lower half
-- Print stars on both sides
-- Print spaces in the middle
-- Decrease spaces in upper half
-- Increase spaces in lower half
+- Use nested loops to traverse rows and columns
+- Print '*' on:
+    - first row
+    - last row
+    - first column
+    - last column
+- Print spaces for inner positions
 
 Time Complexity: O(n²)
 Space Complexity: O(1)
@@ -32,66 +28,33 @@ Space Complexity: O(1)
 
 class Solution {
 
-    public void pattern20(int n) {
+    public void pattern21(int n) {
 
-        int spaces = 2 * n - 2;
+        for(int i = 0; i < n; i++) {
 
-        // Upper half
-        for(int i = 1; i <= n; i++) {
+            for(int j = 0; j < n; j++) {
 
-            for(int j = 1; j <= i; j++) {
+                if(i == 0 || i == n - 1 || j == 0 || j == n - 1) {
 
-                System.out.print("*");
+                    System.out.print("*");
+
+                } else {
+
+                    System.out.print(" ");
+                }
             }
-
-            for(int j = 1; j <= spaces; j++) {
-
-                System.out.print(" ");
-            }
-
-            for(int j = 1; j <= i; j++) {
-
-                System.out.print("*");
-            }
-
-            spaces -= 2;
-
-            System.out.println();
-        }
-
-        spaces = 2;
-
-        // Lower half
-        for(int i = n - 1; i >= 1; i--) {
-
-            for(int j = 1; j <= i; j++) {
-
-                System.out.print("*");
-            }
-
-            for(int j = 1; j <= spaces; j++) {
-
-                System.out.print(" ");
-            }
-
-            for(int j = 1; j <= i; j++) {
-
-                System.out.print("*");
-            }
-
-            spaces += 2;
 
             System.out.println();
         }
     }
 }
 
-public class Pattern_20 {
+public class Pattern_21 {
 
     public static void main(String[] args) {
 
         Solution obj = new Solution();
 
-        obj.pattern20(5);
+        obj.pattern21(5);
     }
 }
