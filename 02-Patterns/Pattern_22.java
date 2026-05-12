@@ -1,4 +1,5 @@
 // Problem: Pattern 22
+// Last basic pattern question
 // Language: Java
 
 /*
