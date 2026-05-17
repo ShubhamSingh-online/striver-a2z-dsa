@@ -1,6 +1,6 @@
 // Problem: Check if the Number is Armstrong
 // Topic: Basic Maths
-// File: If_the_Number_is_Armstrong.java
+// File: If_the_Number_is_Armstrong_10.java
 // Language: Java
 
 /*
