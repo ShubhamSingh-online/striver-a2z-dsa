@@ -16,13 +16,13 @@ Example:
 153 = 1³ + 5³ + 3³ = 153
 
 Approach:
-- Count total digits in the number
-- Extract each digit using modulo (% 10)
-- Raise digit to the power of digit count
-- Add all powered values
-- Compare final sum with original number
+- Count the total number of digits
+- Extract each digit using % 10
+- Raise each digit to the power of digit count
+- Add the results to armNum
+- Compare armNum with the original number
 
-Time Complexity: O(log10 n)
+Time Complexity: O(log₁₀ n)
 Space Complexity: O(1)
 */
 
@@ -30,35 +30,33 @@ class Solution {
 
     public boolean isArmstrong(int n) {
 
+        int realNum = n;
+        int countNum = n;
+        int armNum = 0;
         int count = 0;
-        int temp = n;
-        int og = n;
-
-        double sum = 0;
 
         // Count digits
-        while(n > 0) {
-
-            n = n / 10;
+        while(countNum > 0) {
 
             count++;
+            countNum = countNum / 10;
         }
 
         // Calculate Armstrong sum
-        while(temp > 0) {
+        while(n > 0) {
 
-            int x = temp % 10;
+            int lastNum = n % 10;
 
-            sum = sum + Math.pow(x, count);
+            n = n / 10;
 
-            temp = temp / 10;
+            armNum = armNum + (int)Math.pow(lastNum, count);
         }
 
-        return (og == sum);
+        return armNum == realNum;
     }
 }
 
-public class If_the_Number_is_Armstrong {
+public class If_the_Number_is_Armstrong_10 {
 
     public static void main(String[] args) {
 
