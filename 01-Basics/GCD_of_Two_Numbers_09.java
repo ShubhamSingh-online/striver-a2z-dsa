@@ -12,11 +12,12 @@ The GCD of two integers is the largest
 positive integer that divides both numbers.
 
 Approach:
-- Use Euclidean Algorithm
-- Repeatedly replace:
-    - larger number with remainder
-- Continue until one number becomes 0
-- The other number becomes the GCD
+- Use the Euclidean Algorithm
+- Find the remainder of n1 divided by n2
+- Replace n1 with n2
+- Replace n2 with the remainder
+- Continue until n2 becomes 0
+- n1 will then contain the GCD
 
 Time Complexity: O(log(min(n1, n2)))
 Space Complexity: O(1)
@@ -26,26 +27,18 @@ class Solution {
 
     public int GCD(int n1, int n2) {
 
-        while(n1 != 0 && n2 != 0) {
+        n1 = Math.abs(n1);
+        n2 = Math.abs(n2);
 
-            if(n1 > n2) {
+        while(n2 != 0) {
 
-                n1 = n1 % n2;
+            int remainder = n1 % n2;
 
-            } else {
-
-                n2 = n2 % n1;
-            }
+            n1 = n2;
+            n2 = remainder;
         }
 
-        if(n2 == 0) {
-
-            return n1;
-
-        } else {
-
-            return n2;
-        }
+        return n1;
     }
 }
 
