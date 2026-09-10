@@ -1,5 +1,5 @@
 // Problem: Check if String is Palindrome or Not
-// Topic: Strings
+// Topic: Recursion
 // File: Check_id_String_Palindrome_18.java
 // Language: Java
 
@@ -16,39 +16,44 @@ Example:
 "hello" -> false
 
 Approach:
-- Use two pointers:
-    - left starts from beginning
-    - right starts from end
+- Use recursion with two pointers:
+    - left starts from the beginning
+    - right starts from the end
 - Compare characters at both positions
-- If characters differ:
+- If characters are different:
     - return false
-- Move pointers towards center
+- Move left forward and right backward
+- Continue until the pointers meet or cross
 - If all characters match:
     - return true
 
 Time Complexity: O(n)
-Space Complexity: O(1)
+Space Complexity: O(n)
 */
 
 class Solution {
 
     public boolean palindromeCheck(String s) {
 
-        int left = 0;
-        int right = s.length() - 1;
+        return checkPalindrome(s, 0, s.length() - 1);
+    }
 
-        while(left < right) {
+    private boolean checkPalindrome(String s, int left, int right) {
 
-            if(s.charAt(left) != s.charAt(right)) {
+        // Base case
+        if(left >= right) {
 
-                return false;
-            }
-
-            left++;
-            right--;
+            return true;
         }
 
-        return true;
+        // Characters do not match
+        if(s.charAt(left) != s.charAt(right)) {
+
+            return false;
+        }
+
+        // Recursive call
+        return checkPalindrome(s, left + 1, right - 1);
     }
 }
 
